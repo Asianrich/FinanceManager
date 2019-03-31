@@ -58,6 +58,15 @@ namespace FinanceManager {
         protected global::System.Web.UI.WebControls.GridView GV_Compare;
         
         /// <summary>
+        /// CompareDB-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource CompareDB;
+        
+        /// <summary>
         /// CompareStock-Steuerelement
         /// </summary>
         /// <remarks>

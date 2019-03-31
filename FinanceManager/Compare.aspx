@@ -25,10 +25,9 @@
         <asp:Button ID="BT_DeleteStocks" runat="server" OnClick="BT_DeleteStocks_Click" Text="Clear All" />
     </div>
     <p>
-        <asp:GridView ID="GV_Compare" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="CompareStock" Height="240px" Width="292px" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GV_Compare" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="CompareDB" Height="240px" Width="292px" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="symbols" HeaderText="symbols" SortExpression="symbols" />
                 <asp:BoundField DataField="openstock" HeaderText="openstock" SortExpression="openstock" />
                 <asp:BoundField DataField="High" HeaderText="High" SortExpression="High" />
@@ -46,6 +45,7 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
+        <asp:SqlDataSource ID="CompareDB" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnectionDB %>" SelectCommand="SELECT [symbols], [openstock], [High], [Low], [Volume] FROM [Compare]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="CompareStock" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [symbols], [openstock], [High], [Low], [Volume] FROM [Compare]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="Stock" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectStock %>" SelectCommand="SELECT [symbols], [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose] FROM [Compare]"></asp:SqlDataSource>
     </p>

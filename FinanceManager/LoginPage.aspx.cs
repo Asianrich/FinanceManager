@@ -21,7 +21,7 @@ namespace FinanceManager
         {
             try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
                 con.Open();
 
                 string read = "SELECT * from userlist Where username = @username AND passwort = @passwort";
@@ -51,7 +51,7 @@ namespace FinanceManager
             {
                 if (TB_RegPw.Text == TB_RegConf.Text)
                 {
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
                     con.Open();
 
                     string read = "SELECT * From userlist Where username = @username";

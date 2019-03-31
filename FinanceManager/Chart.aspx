@@ -63,7 +63,7 @@
                     </asp:Title>
                 </Titles>
             </asp:Chart>
-            <asp:SqlDataSource ID="StockData" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose], [DateTime], [symbols] FROM [stock]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="StockData" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnectionDB %>" SelectCommand="SELECT [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose], [DateTime], [symbols] FROM [stock]"></asp:SqlDataSource>
         </p>
     </div>
     <p>

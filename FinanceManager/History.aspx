@@ -41,10 +41,10 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="Verlauf" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [symbol], [beginDate], [endDate] FROM [history] WHERE (([username] = @username) AND ([modus] = @modus))">
+        <asp:SqlDataSource ID="Verlauf" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnectionDB %>" SelectCommand="SELECT [symbol], [beginDate], [endDate] FROM [history] WHERE (([modus] = @modus) AND ([username] = @username))">
             <SelectParameters>
-                <asp:SessionParameter Name="username" SessionField="Username" Type="String" />
                 <asp:Parameter DefaultValue="0" Name="modus" Type="Int32" />
+                <asp:SessionParameter Name="username" SessionField="Username" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
 

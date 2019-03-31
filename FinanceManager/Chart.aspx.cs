@@ -119,7 +119,7 @@ namespace FinanceManager
 
                 foreach (var candle in history)
                 {
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
                     con.Open();
                     string insert = "insert into stock (symbols, openstock, High, Low, Closestock, Volume, AdjustedClose, DateTime) values(@symbols, @openstock, @High, @Low, @Closestock, @Volume, @AdjustedClose, @DateTime)";
                     SqlCommand cmd = new SqlCommand(insert, con);
@@ -145,7 +145,7 @@ namespace FinanceManager
 
         protected void clearDatabase()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
             con.Open();
             string delete = "DELETE FROM stock";
             SqlCommand del = new SqlCommand(delete, con);
@@ -156,7 +156,7 @@ namespace FinanceManager
 
         protected void writeHistory(string symbol, DateTime beginn, DateTime end)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
             con.Open();
             string insert = "insert into history (username, modus,symbol, beginDate, endDate) values(@username, @modus, @symbol, @beginDate, @endDate)";
             SqlCommand inserter = new SqlCommand(insert, con);

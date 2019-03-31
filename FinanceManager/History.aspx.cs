@@ -54,7 +54,7 @@ namespace FinanceManager
         {
             string delete = "DELETE FROM history";
             SqlCommand del;
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
             con.Open();
 
             if (symbols != null)

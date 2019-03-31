@@ -57,7 +57,7 @@ namespace FinanceManager
 
 
 
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
                 con.Open();
 
                 string read = "SELECT symbols from Compare Where symbols = @symbols";
@@ -99,7 +99,7 @@ namespace FinanceManager
         {
             string delete = "DELETE FROM Compare";
             SqlCommand del;
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
             con.Open();
 
             if (symbols != null)
@@ -137,7 +137,7 @@ namespace FinanceManager
 
         protected void writeHistory(string symbol, DateTime beginn, DateTime end)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnectionDB"].ConnectionString);
             con.Open();
             string insert = "insert into history (username, symbol, begin, end) values(@username, @symbol, @begin, @end)";
             SqlCommand inserter = new SqlCommand(insert, con);

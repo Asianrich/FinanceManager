@@ -30,7 +30,7 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="DataGridview" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [symbols], [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose], [DateTime] FROM [stock]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="DataGridview" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnectionDB %>" SelectCommand="SELECT [symbols], [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose], [DateTime] FROM [stock]"></asp:SqlDataSource>
 
     </div>
 </asp:Content>
