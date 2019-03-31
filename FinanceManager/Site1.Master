@@ -10,6 +10,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
     <form id="form1" runat="server">
 
         <div>
@@ -20,12 +21,16 @@
                     <asp:Button ID="ChartButton" runat="server" Text="Aktienverlauf" OnClick="ChartButton_Click" />
                     <asp:Button ID="CompareButton" runat="server" Text="Vergleich" OnClick="CompareButton_Click" />
                     <asp:Button ID="AboutButton" runat="server" Text="About" OnClick="AboutButton_Click" />
+                    
+                    <asp:Button ID="BT_Login" runat="server" Text="Login" OnClick="BT_Login_Click" />
+                    
+                    <asp:Label ID="LB_Login" runat="server" Text="Nicht Eingeloggt"></asp:Label>
+                    <asp:Button ID="BT_Logout" runat="server" Enabled="False" OnClick="BT_Logout_Click" OnLoad="BT_Logout_Load" Text="Logout" Visible="False" />
+                    
                 </p>
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-
         </div>
-
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>

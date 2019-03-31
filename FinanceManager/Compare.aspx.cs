@@ -134,5 +134,19 @@ namespace FinanceManager
                 Response.Write("<script>alert('Hoppala, da hat jemand kein Reihe ausgewaehlt. :(');</script>");
             }
         }
+
+        protected void writeHistory(string symbol, DateTime beginn, DateTime end)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+            con.Open();
+            string insert = "insert into history (username, symbol, begin, end) values(@username, @symbol, @begin, @end)";
+            SqlCommand inserter = new SqlCommand(insert, con);
+            inserter.Parameters.AddWithValue("@username", Session["username"].ToString());
+            inserter.Parameters.AddWithValue("@symbol", symbol);
+            inserter.Parameters.AddWithValue("@begin", beginn.ToString());
+            inserter.Parameters.AddWithValue("@ende", end.ToString());
+            inserter.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

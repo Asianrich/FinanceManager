@@ -5,6 +5,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h1>Graphenverlauf</h1>
+    <div>
+        <ul>
+            <li>Symbol: Symbol der Aktie eingeben</li>
+            <li>Beginn: DD-MM-YYY</li>
+            <li>Ende: DD-MM-YYY</li>
+        </ul>
+
+    </div>
+
 
     <p>
         <span>Symbol :&nbsp;
@@ -14,9 +23,11 @@
             &nbsp; Ende:&nbsp;&nbsp;<asp:TextBox ID="TB_End" runat="server" Width="192px"></asp:TextBox>
             &nbsp; </span>
         <asp:Button ID="SearchButton" runat="server" Text="Suchen" OnClick="SearchButton_Click" />
+    &nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="BT_Table" runat="server" OnClick="BT_Table_Click" Text="Tabellenansicht" />
     </p>
     <div>
-        <p style="margin-left:30px">
+        <p style="margin-left: 30px">
             <asp:Label ID="LB_Symbol" runat="server" Text="Symbol"></asp:Label>
         </p>
     </div>
@@ -52,31 +63,6 @@
             </asp:Chart>
             <asp:SqlDataSource ID="StockData" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [symbols], [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose], [DateTime] FROM [stock]"></asp:SqlDataSource>
         </p>
-    </div>
-    <div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="StockData" ForeColor="#333333" GridLines="None">
-            <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                <asp:BoundField DataField="symbols" HeaderText="symbols" SortExpression="symbols" />
-                <asp:BoundField DataField="openstock" HeaderText="openstock" SortExpression="openstock" />
-                <asp:BoundField DataField="High" HeaderText="High" SortExpression="High" />
-                <asp:BoundField DataField="Low" HeaderText="Low" SortExpression="Low" />
-                <asp:BoundField DataField="Closestock" HeaderText="Closestock" SortExpression="Closestock" />
-                <asp:BoundField DataField="Volume" HeaderText="Volume" SortExpression="Volume" />
-                <asp:BoundField DataField="AdjustedClose" HeaderText="AdjustedClose" SortExpression="AdjustedClose" />
-                <asp:BoundField DataField="DateTime" HeaderText="DateTime" SortExpression="DateTime" />
-            </Columns>
-            <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
-            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-            <SortedAscendingHeaderStyle BackColor="#246B61" />
-            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-            <SortedDescendingHeaderStyle BackColor="#15524A" />
-        </asp:GridView>
     </div>
     <p>
         &nbsp;

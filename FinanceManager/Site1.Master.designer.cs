@@ -67,6 +67,33 @@ namespace FinanceManager {
         protected global::System.Web.UI.WebControls.Button AboutButton;
         
         /// <summary>
+        /// BT_Login-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BT_Login;
+        
+        /// <summary>
+        /// LB_Login-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LB_Login;
+        
+        /// <summary>
+        /// BT_Logout-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BT_Logout;
+        
+        /// <summary>
         /// ContentPlaceHolder1-Steuerelement
         /// </summary>
         /// <remarks>

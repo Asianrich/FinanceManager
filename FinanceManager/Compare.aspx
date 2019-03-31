@@ -1,13 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Compare.aspx.cs" Inherits="FinanceManager.Compare" Async="true" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Aktienvergleich</h1>
     <div>
-        <asp:Button ID="BT_ADD" runat="server" Text="Hinzufügen" OnClick="BT_ADD_Click" />
+        <p>
+            Symbol: Mehrere Symbole können eingegeben mit einem Trenner(Semicolon, Komma, Leerzeichen)
+        </p>
+        <p>
+            Beispiel: GOOGL, AAPL; etc. 
+        </p>
+
+    </div>
+
+
+    <div>
+        &nbsp;Symbol:
         <asp:TextBox ID="TB_Symbol" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="BT_ADD" runat="server" Text="Hinzufügen" OnClick="BT_ADD_Click" />
+        &nbsp;<asp:Button ID="BT_DeleteStock" runat="server" OnClick="BT_DeleteStock_Click" Text="Delete Stock" />
+        &nbsp;
         <asp:Button ID="BT_DeleteStocks" runat="server" OnClick="BT_DeleteStocks_Click" Text="Clear All" />
-        <asp:Button ID="BT_DeleteStock" runat="server" OnClick="BT_DeleteStock_Click" Text="Delete Stock" />
     </div>
     <p>
         <asp:GridView ID="GV_Compare" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="CompareStock" Height="240px" Width="292px" CellPadding="4" ForeColor="#333333" GridLines="None">

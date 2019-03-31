@@ -49,6 +49,15 @@ namespace FinanceManager {
         protected global::System.Web.UI.WebControls.Button SearchButton;
         
         /// <summary>
+        /// BT_Table-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BT_Table;
+        
+        /// <summary>
         /// LB_Symbol-Steuerelement
         /// </summary>
         /// <remarks>
@@ -74,14 +83,5 @@ namespace FinanceManager {
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource StockData;
-        
-        /// <summary>
-        /// GridView1-Steuerelement
-        /// </summary>
-        /// <remarks>
-        /// Automatisch generiertes Feld
-        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

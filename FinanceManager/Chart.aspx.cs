@@ -46,6 +46,12 @@ namespace FinanceManager
                 //cookie["Ende"] = end.ToString();
                 //cookie.Expires = DateTime.Now.AddDays(2);
                 //Response.Cookies.Add(cookie);
+
+                if(Session["username"] != null)
+                {
+                    writeHistory(symbol, begin, end);
+                }
+
                 Response.Redirect(Request.RawUrl);
             }
             catch(Exception ex)
@@ -131,9 +137,24 @@ namespace FinanceManager
         }
 
 
-        protected void request(string symbol, DateTime beginn, DateTime end)
+        protected void writeHistory(string symbol, DateTime beginn, DateTime end)
         {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+            con.Open();
+            string insert = "insert into history (username, modus,symbol, begin, end) values(@username, @modus,@symbol, @begin, @end)";
+            SqlCommand inserter = new SqlCommand(insert, con);
+            inserter.Parameters.AddWithValue("@username", Session["username"].ToString());
+            inserter.Parameters.AddWithValue("@modus", 0);
+            inserter.Parameters.AddWithValue("@symbol", symbol);
+            inserter.Parameters.AddWithValue("@begin", beginn.ToString());
+            inserter.Parameters.AddWithValue("@ende", end.ToString());
+            inserter.ExecuteNonQuery();
+            con.Close();
+        }
 
+        protected void BT_Table_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LookUpTable.aspx");
         }
     }
 }

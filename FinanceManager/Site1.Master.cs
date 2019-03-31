@@ -11,7 +11,8 @@ namespace FinanceManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["username"] != null)
+            LB_Login.Text = Session["username"].ToString();
         }
 
         protected void HomeButton_Click(object sender, EventArgs e)
@@ -32,6 +33,28 @@ namespace FinanceManager
         protected void AboutButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("About.aspx");
+        }
+
+        protected void BT_Login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
+
+        protected void BT_Logout_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            BT_Logout.Enabled = false;
+            BT_Logout.Visible = false;
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void BT_Logout_Load(object sender, EventArgs e)
+        {
+            if(Session["username"] != null)
+            {
+                BT_Logout.Enabled = true;
+                BT_Logout.Visible = true;
+            }
         }
     }
 }

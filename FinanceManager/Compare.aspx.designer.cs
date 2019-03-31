@@ -13,15 +13,6 @@ namespace FinanceManager {
     public partial class Compare {
         
         /// <summary>
-        /// BT_ADD-Steuerelement
-        /// </summary>
-        /// <remarks>
-        /// Automatisch generiertes Feld
-        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BT_ADD;
-        
-        /// <summary>
         /// TB_Symbol-Steuerelement
         /// </summary>
         /// <remarks>
@@ -31,13 +22,13 @@ namespace FinanceManager {
         protected global::System.Web.UI.WebControls.TextBox TB_Symbol;
         
         /// <summary>
-        /// BT_DeleteStocks-Steuerelement
+        /// BT_ADD-Steuerelement
         /// </summary>
         /// <remarks>
         /// Automatisch generiertes Feld
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BT_DeleteStocks;
+        protected global::System.Web.UI.WebControls.Button BT_ADD;
         
         /// <summary>
         /// BT_DeleteStock-Steuerelement
@@ -47,6 +38,15 @@ namespace FinanceManager {
         /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BT_DeleteStock;
+        
+        /// <summary>
+        /// BT_DeleteStocks-Steuerelement
+        /// </summary>
+        /// <remarks>
+        /// Automatisch generiertes Feld
+        /// Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BT_DeleteStocks;
         
         /// <summary>
         /// GV_Compare-Steuerelement
