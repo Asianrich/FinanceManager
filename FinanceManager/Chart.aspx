@@ -23,8 +23,10 @@
             &nbsp; Ende:&nbsp;&nbsp;<asp:TextBox ID="TB_End" runat="server" Width="192px"></asp:TextBox>
             &nbsp; </span>
         <asp:Button ID="SearchButton" runat="server" Text="Suchen" OnClick="SearchButton_Click" />
-    &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
         <asp:Button ID="BT_Table" runat="server" OnClick="BT_Table_Click" Text="Tabellenansicht" />
+    &nbsp;
+        <asp:Button ID="BT_verlauf" runat="server" Enabled="False" OnClick="BT_verlauf_Click" OnLoad="BT_verlauf_Load" Text="Verlauf" Visible="False" />
     </p>
     <div>
         <p style="margin-left: 30px">
@@ -61,7 +63,7 @@
                     </asp:Title>
                 </Titles>
             </asp:Chart>
-            <asp:SqlDataSource ID="StockData" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [symbols], [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose], [DateTime] FROM [stock]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="StockData" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [openstock], [High], [Low], [Closestock], [Volume], [AdjustedClose], [DateTime], [symbols] FROM [stock]"></asp:SqlDataSource>
         </p>
     </div>
     <p>

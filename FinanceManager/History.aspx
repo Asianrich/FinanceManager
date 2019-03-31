@@ -4,14 +4,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Verlauf</h1>
     <div>
-        Historie der eingegebenen Symbole</div>
+        Historie der eingegebenen Symbole&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+    </div>
+    <asp:Image ID="Image1" runat="server" Height="105px" Width="130px" ImageUrl="~/Picture/57143.png" />
     <div>
 
         <div>
 
             <asp:Button ID="BT_Select" runat="server" OnClick="BT_Select_Click" Text="Auswahl" />
-            <asp:Button ID="BT_Delete" runat="server" Text="Löschen" />
-            <asp:Button ID="BT_Delete_All" runat="server" Text="Alles Löschen" />
+            <asp:Button ID="BT_Delete" runat="server" Text="Löschen" OnClick="BT_Delete_Click" />
+            <asp:Button ID="BT_Delete_All" runat="server" Text="Alles Löschen" OnClick="BT_Delete_All_Click" />
 
         </div>
 
@@ -24,8 +27,8 @@
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="symbol" HeaderText="symbol" SortExpression="symbol" />
-                <asp:BoundField DataField="begin" HeaderText="begin" SortExpression="begin" />
-                <asp:BoundField DataField="end" HeaderText="end" SortExpression="end" />
+                <asp:BoundField DataField="beginDate" HeaderText="beginDate" SortExpression="beginDate" />
+                <asp:BoundField DataField="endDate" HeaderText="endDate" SortExpression="endDate" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -38,9 +41,9 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="Verlauf" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [symbol], [begin], [end] FROM [history] WHERE (([username] = @username) AND ([modus] = @modus))">
+        <asp:SqlDataSource ID="Verlauf" runat="server" ConnectionString="<%$ ConnectionStrings:StockConnection %>" SelectCommand="SELECT [symbol], [beginDate], [endDate] FROM [history] WHERE (([username] = @username) AND ([modus] = @modus))">
             <SelectParameters>
-                <asp:SessionParameter Name="username" SessionField="username" Type="String" />
+                <asp:SessionParameter Name="username" SessionField="Username" Type="String" />
                 <asp:Parameter DefaultValue="0" Name="modus" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>

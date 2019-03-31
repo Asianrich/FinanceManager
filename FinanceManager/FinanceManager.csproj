@@ -84,7 +84,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="70445.png" />
+    <Content Include="Picture\57143.png" />
+    <Content Include="Picture\HomepageMeme.jpg" />
+    <Content Include="Picture\70445.png" />
     <Content Include="About.aspx" />
     <Content Include="App_Data\Stock.mdf" />
     <Content Include="App_Data\Stock_log.ldf">

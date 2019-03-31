@@ -19,20 +19,30 @@ namespace FinanceManager
 
         protected void BT_Log_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
-            con.Open();
-
-            string read = "SELECT * from userlist Where username = @username AND passwort = @passwort";
-            SqlCommand reading = new SqlCommand(read, con);
-            reading.Parameters.AddWithValue("@username", TB_LogUser.Text);
-            reading.Parameters.AddWithValue("@passwort", TB_LogPw.Text);
-            SqlDataReader reader = reading.ExecuteReader();
-            if (reader.Read())
+            try
             {
-                Session["username"] = TB_LogUser.Text;
-            }
-            Response.Redirect(Request.RawUrl);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockConnection"].ConnectionString);
+                con.Open();
 
+                string read = "SELECT * from userlist Where username = @username AND passwort = @passwort";
+                SqlCommand reading = new SqlCommand(read, con);
+                reading.Parameters.AddWithValue("@username", TB_LogUser.Text);
+                reading.Parameters.AddWithValue("@passwort", TB_LogPw.Text);
+                SqlDataReader reader = reading.ExecuteReader();
+                if (reader.Read())
+                {
+                    Session["username"] = TB_LogUser.Text;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+                Response.Redirect(Request.RawUrl);
+            }
+            catch(Exception ex)
+            {
+                Response.Write("<script>alert('Login Fehlgeschlagen');</script>");
+            }
         }
 
         protected void BT_registry_Click(object sender, EventArgs e)
@@ -76,5 +86,6 @@ namespace FinanceManager
         {
             
         }
+
     }
 }

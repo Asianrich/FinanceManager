@@ -10,7 +10,7 @@
         <br />
         <br />
         Passwort<br />
-        <asp:TextBox ID="TB_LogPw" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TB_LogPw" runat="server" TextMode="Password"></asp:TextBox>
     </div>
     <div>
 
@@ -28,11 +28,11 @@
         <br />
         <br />
         Passwort<br />
-        <asp:TextBox ID="TB_RegPw" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TB_RegPw" runat="server" TextMode="Password"></asp:TextBox>
         <br />
         <br />
         Passwort erneut eingeben<br />
-        <asp:TextBox ID="TB_RegConf" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TB_RegConf" runat="server" TextMode="Password"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="BT_registry" runat="server" OnClick="BT_registry_Click" Text="Registrieren" />

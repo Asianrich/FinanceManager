@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
 
         <div>
-            AktienChecker
+            <h1>Aktienchecker</h1>
 
                 <p>
                     <asp:Button ID="HomeButton" runat="server" Text="Home" OnClick="HomeButton_Click" />

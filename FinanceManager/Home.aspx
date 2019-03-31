@@ -11,8 +11,16 @@
         Folgende möglichkeiten gibt es: Graphenverlauf mit Liste und Vergleich
     </p>
     <ul>
-        <li>Graphenverlauf mit Liste: Es wird hier die Historische Daten einer Aktie(Symbol) aufgelistet.</li>
+        <li>Graphenverlauf mit Liste: Es wird hier die Historische Daten einer Aktie(Symbol) aufgelistet.<ul>
+            <li>Es gibt eine Historie, die nur für eingeloggte Personen verfügbar sind</li>
+            </ul>
+        </li>
         <li>Vergleich: Man kann mehrere Symbole vergleichen. Diese werden von aktueller Zeitpunkt aufgerufen.
         </li>
     </ul>
+    <p>
+        &nbsp;</p>
+    <p>
+        <asp:Image ID="Image1" runat="server" Height="258px" ImageUrl="~/Picture/HomepageMeme.jpg" Width="438px" />
+    </p>
 </asp:Content>

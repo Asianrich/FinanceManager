@@ -7,7 +7,7 @@
         <asp:Button ID="BT_back" runat="server" OnClick="BT_back_Click" Text="Zurück" />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="DataGridview" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="DataGridview" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="symbols" HeaderText="symbols" SortExpression="symbols" />

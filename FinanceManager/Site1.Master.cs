@@ -50,7 +50,7 @@ namespace FinanceManager
 
         protected void BT_Logout_Load(object sender, EventArgs e)
         {
-            if(Session["username"] != null)
+            if (Session["username"] != null)
             {
                 BT_Logout.Enabled = true;
                 BT_Logout.Visible = true;
