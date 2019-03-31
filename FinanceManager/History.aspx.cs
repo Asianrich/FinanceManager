@@ -43,6 +43,7 @@ namespace FinanceManager
                 DateTime end = Convert.ToDateTime(GV_History.Rows[index].Cells[3].Text);
 
                 delete(begin, end, symbol);
+                Response.Redirect(Request.RawUrl);
             }
             catch(Exception)
             {
@@ -73,7 +74,7 @@ namespace FinanceManager
             del.ExecuteNonQuery();
             con.Close();
 
-
+            Response.Redirect(Request.RawUrl);
         }
         protected void BT_Delete_All_Click(object sender, EventArgs e)
         {
