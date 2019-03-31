@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="FinanceManager.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Aktienchecker</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+            AktienChecker
+
+                <p>
+                    <asp:Button ID="HomeButton" runat="server" Text="Home" OnClick="HomeButton_Click" />
+                    <asp:Button ID="ChartButton" runat="server" Text="Aktienverlauf" OnClick="ChartButton_Click" />
+                    <asp:Button ID="CompareButton" runat="server" Text="Vergleich" OnClick="CompareButton_Click" />
+                    <asp:Button ID="AboutButton" runat="server" Text="About" OnClick="AboutButton_Click" />
+                </p>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+        </div>
+
+    </form>
+</body>
+</html>
